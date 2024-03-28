@@ -9,9 +9,10 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     // Deklarera 4 Button-objekt
-    Button btn1, btn2, btn3, btn4;
-    // Deklarera 4 heltalsvariabler för knapparnas värden
-    int val1, val2, val3, val4;
+
+    // Deklarera 4 heltalsvariabler för knapparnas värden, t.ex.
+    // val1, val2, val3, val4
+
 
 
     @Override
@@ -19,11 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Koppla samman Button-objekten med knapparna i layouten
-        btn1 = findViewById(R.id.button1);
-        btn2 = findViewById(R.id.button2);
-        btn3 = findViewById(R.id.button3);
-        btn4 = findViewById(R.id.button4);
+        // Initialisera Button-objekten med referens till knapparna i layouten
 
 
     }
@@ -34,14 +31,12 @@ public class MainActivity extends AppCompatActivity {
     public void buttonClick(View view) {
 
         // Skapa ett Button-objekt genom att type-casta (byta datatyp)
-        // på det View-objekt som kommer med knapptrycket
-        Button btn = (Button) view;
+        // på det View-objekt som kommer med knapptrycket, t.ex.
+        // Button btn = (Button) view;
 
         // Kontrollera vilken knapp som klickats, öka värde på rätt vaiabel
-        if (view.getId() == R.id.button1) val1++;
-        if (view.getId() == R.id.button2) val2++;
-        if (view.getId() == R.id.button3) val3++;
-        if (view.getId() == R.id.button4) val4++;
+        // T.ex. för att kolla om man tryckt på knappen med id "button1":
+        //  if (view.getId() == R.id.button1)
 
         // Slutligen, kör metoden som ska räkna ut allt!
         calculate();
@@ -52,18 +47,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void calculate() {
 
-        // Uppdatera knapparna med de nuvarande värdena
-        btn1.setText(String.valueOf(val1));
-        btn2.setText(String.valueOf(val2));
-        btn3.setText(String.valueOf(val3));
-        btn4.setText(String.valueOf(val4));
+        // Uppdatera knapparnas text med de nuvarande värdena,
+        // du kan använda .setText() på ett button-objekt.
 
-        // Mata in värdena i Chi-2-uträkningen och ta emot resultatet
-        // i en Double-variabel
-        double chi2 = Significance.chiSquared(val1, val2, val3, val4);
+        // Mata in värdena i Chi-2-uträkningen och ta emot resultatet, t.ex:
+        //  double chi2 = Significance.chiSquared(val1, val2, val3, val4);
 
-        // Mata in chi2-resultatet i getP() och ta emot p-värdet
-        double pValue = Significance.getP(chi2);
+        // Mata in chi2-resultatet i getP() och ta emot p-värdet, t.ex:
+        // double pValue = Significance.getP(chi2);
 
         /**
          *  - Visa chi2 och pValue åt användaren på ett bra och tydligt sätt!

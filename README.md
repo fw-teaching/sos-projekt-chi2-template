@@ -1,1 +1,1 @@
-## Projekt 2 - Chi-två-signifikansanalys i Android
+## Projekt 1 - Chi-två-signifikansanalys i Android
